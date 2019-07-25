@@ -25,19 +25,29 @@ const mutations = {
 
   SELL_STOCK(state, { stockId, quantity, stockPrice }) {
     const record = state.stocks.find(element => element.id == stockId);
-    if (record.quantity > quantity) {
-      record.quantity -= quantity;
+    if (parseInt(record.quantity, 10) > parseInt(quantity, 10)) {
+      record.quantity = parseInt(record.quantity, 10) - parseInt(quantity, 10);
     } else {
       state.stocks.splice(state.stocks.indexOf(record), 1);
     }
 
     state.funds += stockPrice * quantity;
+  },
+
+  DEC_FUNDS(state, round) {
+    if (round > 4) {
+      state.funds = state.funds - 1000;
+    }
   }
 };
 
 const actions = {
   sellStock({ commit }, order) {
     commit("SELL_STOCK", order);
+  },
+
+  decRound({ commit }, round) {
+    commit("DEC_FUNDS", round);
   }
 };
 

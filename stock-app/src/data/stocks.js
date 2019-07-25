@@ -1,6 +1,20 @@
 export default [
-    {id:1, name: 'placeholder', price: 100},
-    {id:2, name: 'placeholder1', price: 110},
-    {id:3, name: 'placeholder2', price: 120},
-    {id:4, name: 'placeholder3', price: 130}
+  { id: 1, name: "Google", price: 100 },
+  { id: 2, name: "Apple", price: 110 },
+  { id: 3, name: "Microsoft", price: 120 },
+  { id: 4, name: "Citigroup", price: 125 },
+  { id: 5, name: "General Electric", price: 310 },
+  { id: 6, name: "United Parcel Service Inc", price: 250 },
+  { id: 7, name: "Discover Financial Services", price: 200 },
+  { id: 8, name: "Texas Instruments Inc", price: 565 },
+  { id: 9, name: "W W Grainger Inc", price: 100 },
+  { id: 10, name: "Edwards Lifesciences Corp", price: 985 },
+  { id: 11, name: "Rollins Inc", price: 80 },
+  { id: 12, name: "Merketaxess Holdings Inc", price: 127 },
+  { id: 13, name: "Amphenol Corp", price: 12 },
+  { id: 14, name: "Norfolk Southern Corp", price: 50 },
+  { id: 15, name: "FLIR Systems Inc", price: 40 },
+  { id: 16, name: "Bausch Health", price: 1120 },
+  { id: 17, name: "Canopy Growth", price: 340 },
+  { id: 18, name: "Cheniere Energy", price: 1300 }
 ];

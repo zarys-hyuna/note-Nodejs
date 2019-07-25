@@ -34,6 +34,7 @@
           </div>
         </div>
       </ul>
+      <strong class="navbar-text navbar-right" style="margin-right: 10px;">Round: {{ rounds}}</strong>
       <strong class="navbar-text navbar-right">Funds: {{ funds | currency}}</strong>
     </div>
   </nav>
@@ -50,12 +51,18 @@ export default {
   computed: {
     funds() {
       return this.$store.getters.funds;
+    },
+
+    rounds() {
+      return this.$store.getters.rounds;
     }
   },
   methods: {
-    ...mapActions(["randomizeStocks"]),
+    ...mapActions(["randomizeStocks", "decRound"]),
     endDay() {
+      this.decRound(this.$store.getters.rounds);
       this.randomizeStocks();
+      this.$router.push("/stocks");
     },
     toggleDropdown(isDropdownOpen) {
       this.isDropdownOpen = !this.isDropdownOpen;

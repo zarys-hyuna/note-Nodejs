@@ -18,6 +18,9 @@
           />
         </div>
         <div class="float-right">
+          <router-link :to="{ name: 'user', params: { id: this.stock.id }}" activeClass="active">
+            <button class="btn btn-success">Graphs</button>
+          </router-link>
           <button
             class="btn btn-success"
             @click="buy_Stocks"
