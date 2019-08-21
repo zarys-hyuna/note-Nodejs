@@ -25,8 +25,11 @@ export default {
 </script>
 
 <style>
+html {
+  background-color: gray;
+}
 body {
-  padding: 30px;
+  padding-top: 30px;
 }
 .slide-enter-active {
   animation: slide-in 200ms ease-out forwards;

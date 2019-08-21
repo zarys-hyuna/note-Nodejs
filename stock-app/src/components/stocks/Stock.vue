@@ -18,8 +18,12 @@
           />
         </div>
         <div class="float-right">
-          <router-link :to="{ name: 'user', params: { id: this.stock.id }}" activeClass="active">
-            <button class="btn btn-success">Graphs</button>
+          <router-link
+            :to="{ name: 'user', params: { id: this.stock.id }}"
+            activeClass="active"
+            :disabled="insufficientRounds == true"
+          >
+            <button class="btn btn-success" :disabled="insufficientRounds == true">Graphs</button>
           </router-link>
           <button
             class="btn btn-success"
@@ -50,6 +54,12 @@ export default {
     },
     insufficientFunds() {
       return this.quantity * this.stock.price > this.funds;
+    },
+    insufficientRounds() {
+      if (this.$store.getters.rounds < 2) {
+        return true;
+      }
+      return false;
     }
   },
   methods: {

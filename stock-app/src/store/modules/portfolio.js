@@ -35,8 +35,11 @@ const mutations = {
   },
 
   DEC_FUNDS(state, round) {
-    if (round > 4) {
-      state.funds = state.funds - 1000;
+    if (round % 10 === 5) {
+      state.funds = state.funds - 200 * (round - 5);
+    }
+    if (round % 10 === 0) {
+      state.funds = state.funds + 5000;
     }
   }
 };

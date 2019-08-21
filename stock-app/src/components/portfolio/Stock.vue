@@ -18,6 +18,13 @@
           />
         </div>
         <div class="float-right">
+          <router-link
+            :to="{ name: 'user', params: { id: this.stock.id }}"
+            activeClass="active"
+            :disabled="insufficientRounds == true"
+          >
+            <button class="btn btn-success" :disabled="insufficientRounds == true">Graphs</button>
+          </router-link>
           <button
             class="btn btn-success"
             @click="sell_Stocks"

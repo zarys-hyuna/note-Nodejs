@@ -13,12 +13,13 @@ const mutations = {
   RND_STOCKS(state) {
     state.stocks.forEach((stock, index) => {
       let rnd = Math.random();
-      let volatility = 0.3;
+      let volatility = 0.07;
       let change_percent = 2 * volatility * rnd;
       if (change_percent > volatility) {
         change_percent -= 2 * volatility;
       }
       let change_amount = parseInt(stock.price, 10) * change_percent;
+
       stock.price = Math.round(parseInt(stock.price, 10) + change_amount);
       state.dataTrend[index].push(stock.price);
       console.log(state.dataTrend[index]);

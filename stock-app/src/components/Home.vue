@@ -1,13 +1,15 @@
 <template>
-  <div>
+  <div class="test">
     <h1>Trade or View portfolio</h1>
     <h6>You can Save or Load your data</h6>
     <h6>Click on 'End Day' to end your turn</h6>
-    <h6>After the 5th round you will lose $1000 at the end of each day</h6>
+    <h6>Every 5 Rounds lose $1000 at the end of the Day</h6>
     <hr />
     <p>Your Funds: {{ funds | currency }}</p>
   </div>
 </template>
+
+
 
 <script>
 export default {
@@ -18,3 +20,12 @@ export default {
   }
 };
 </script>
+<style>
+body {
+  background-color: gray;
+}
+
+.test {
+  padding-top: 30px;
+}
+</style>
